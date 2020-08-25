@@ -12,17 +12,20 @@
 			v-bind:src="img"
 			v-bind:alt="name"
 			width="100">
-		<h1> {{name}}
+		<h1 v-bind:class="changePercent > 0 ? 'green' : 'red'"> {{name}}
 			<span v-if="changePercent > 0">👍</span>
 			<span v-else>👎</span>
-			<span v-on:click="toggleShowPrices">{{showPrices ? '🙈' : '🐵'}}</span>
+			<span class="button" v-on:click="toggleShowPrices">{{showPrices ? '🙈' : '🐵'}}</span>
 		</h1>
 
 
 
 		<ul v-show="showPrices">
-			<li v-for="(price, index) in pricesWithDays" v-bind:key="price.day">
-				{{ index }} | <b> {{ price.day }} </b> - {{ price.value }}
+			<li 
+				v-bind:class="{ orange: p.value == price, red: p.value < price, green: p.value > price }"
+				v-for="(p, index) in pricesWithDays" 
+				v-bind:key="p.day">
+				{{ index }} | <b> {{ p.day }} </b> - {{ p.value }}
 			</li>
 		</ul>
 
