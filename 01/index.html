@@ -12,7 +12,7 @@
 			v-bind:src="img"
 			v-bind:alt="name"
 			width="100">
-		<h1 v-bind:class="changePercent > 0 ? 'green' : 'red'"> {{name}}
+		<h1 v-bind:class="changePercent > 0 ? 'green' : 'red'"> {{title}}
 			<span v-if="changePercent > 0">👍</span>
 			<span v-else>👎</span>
 			<span class="button" v-on:click="toggleShowPrices">{{showPrices ? '🙈' : '🐵'}}</span>
