@@ -6,19 +6,21 @@
 </head>
 <body>
 	<div id="app">
-		<img v-bind:src="img" v-bind:alt="name" width="100">
+		<img
+			v-on:mouseover="toggleShowPrices"
+			v-on:mouseout="toggleShowPrices"
+			v-bind:src="img"
+			v-bind:alt="name"
+			width="100">
 		<h1> {{name}}
 			<span v-if="changePercent > 0">👍</span>
 			<span v-else>👎</span>
+			<span v-on:click="toggleShowPrices">{{showPrices ? '🙈' : '🐵'}}</span>
 		</h1>
 
-		<ul>
-			<li v-for="(price, index) in prices" v-bind:key="price">
-				{{ index }} - {{ price }}
-			</li>
-		</ul>
 
-		<ul>
+
+		<ul v-show="showPrices">
 			<li v-for="(price, index) in pricesWithDays" v-bind:key="price.day">
 				{{ index }} | <b> {{ price.day }} </b> - {{ price.value }}
 			</li>
