@@ -10,10 +10,19 @@
 		<h1> {{name}}
 			<span v-if="changePercent > 0">👍</span>
 			<span v-else>👎</span>
-
-			<span v-show="changePercent > 0">👍</span>
-			<span v-show="changePercent < 0">👎</span>
 		</h1>
+
+		<ul>
+			<li v-for="(price, index) in prices" v-bind:key="price">
+				{{ index }} - {{ price }}
+			</li>
+		</ul>
+
+		<ul>
+			<li v-for="(price, index) in pricesWithDays" v-bind:key="price.day">
+				{{ index }} | <b> {{ price.day }} </b> - {{ price.value }}
+			</li>
+		</ul>
 
 	</div>
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
