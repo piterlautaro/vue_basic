@@ -1,8 +1,6 @@
 Práctica Módulo 2
 Armar un simple “tracker” de cursos, que permita calcular y registrar la cantidad cursos de Platzi tomados y obtener la suma de las horas invertidas en tu educacion.
 
-Haz fork de este CodePen para obtener la estructura basica del proyecto:
-
 Consideraciones:
 La aplicación debe cumplir los siguientes lineamientos:
 - Una propiedad courses que sea un array y permita almacenar la lista de cursos.
