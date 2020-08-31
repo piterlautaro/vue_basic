@@ -11,10 +11,18 @@
 		<coin-detail
 			v-on:change-color="updateColor"
 			v-bind:coin="btc"
-		></coin-detail>
+		>
+			<template v-slot:text>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore aliquam tempora repellat ullam aperiam cupiditate commodi non ad, totam id maiores laudantium. Nam reiciendis esse numquam alias repellendus harum ex.</p>
+			</template>
+			<template v-slot:link>
+				Ir a <a href="https://www.platzi.com">Platzi</a>
+			</template>
+			
+		</coin-detail>
 
 	</div>
-	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
 	<script type="text/javascript" src="app.js"></script>
 </body>
 </html>
