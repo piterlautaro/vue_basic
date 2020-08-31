@@ -9,6 +9,16 @@ Vue.component('CoinDetail',{
 		}
 	},
 
+	//El método created es bueno para tener información de una API Rest, es uno de los primeros eventos que ocurren dentro del cliclo de vida del componente
+	created (){
+		console.log('Created coin detaill');
+	},
+
+	//En el método mounted ya tenemos disponible el DOM, entonces es posible obtener elementos desde ahí
+	mounted(){
+		console.log('Mounted coin detail');
+	},
+
 	methods:{
 		toggleShowPrices(){
 			this.showPrices = !this.showPrices;
@@ -83,6 +93,16 @@ new Vue({
 			
 			color: 'F4F4F4',
 		}
+	},
+
+	//El método created es bueno para tener información de una API Rest, es uno de los primeros eventos que ocurren dentro del cliclo de vida del componente
+	created (){
+		console.log('Created');
+	},
+
+	//En el método mounted ya tenemos disponible el DOM, entonces es posible obtener elementos desde ahí
+	mounted(){
+		console.log('Mounted');
 	},
 
 	// watch:{
